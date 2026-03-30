@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const profileLinks = document.querySelectorAll('.perfil');
+    const profileLinks = document.querySelectorAll('.profile');
 
     profileLinks.forEach(link => {
         link.addEventListener('click', () => {
