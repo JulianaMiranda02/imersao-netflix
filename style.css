@@ -1,0 +1,283 @@
+/* Reset e estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #141414;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Main container */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #141414 0%, #0a0a0a 100%);
+}
+
+/* Botão de alternância de tema */
+.theme-toggle-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    z-index: 10;
+}
+
+.theme-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Título principal */
+h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 60px;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    animation: fadeInDown 1s ease-out;
+}
+
+.profiles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: center;
+}
+
+
+/* Item de perfil */
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.profile:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* Imagem de perfil */
+.profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 16px;
+    border: 3px solid transparent;
+    transition: all 0.3s ease;
+    border: #ffffff 2px solid;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+
+
+/* Texto do perfil */
+.profile p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.3s ease;
+}
+
+.profile:hover p {
+    color: #ffffff;
+}
+
+/* ===== ESTILOS PARA PERFIS FORMATADOS ===== */
+.perfil {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.perfil:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+.avatar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.avatar-container img {
+    display: block;
+    width: 128px;
+    height: 128px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #ffffff;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.nome-perfil {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 8px;
+    transition: color 0.3s ease;
+}
+
+.perfil:hover .nome-perfil {
+    color: #ffffff;
+}
+
+
+
+/* Animações */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade - Tablet */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+    }
+
+    .profiles {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .profile img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* Responsividade - Mobile */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
+
+    .profiles {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+    }
+
+    .profile img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile p {
+        font-size: 1rem;
+    }
+}
+
+/* Responsividade - Mobile Pequeno */
+@media (max-width: 360px) {
+    main {
+        padding: 24px 12px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 24px;
+    }
+
+    .profiles {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .profile img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .profile p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Modo Claro */
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.light-mode main {
+    background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+}
+
+body.light-mode h1 {
+    color: #000000;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .profile img {
+    border-color: #000000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode .profile p {
+    color: #333333;
+}
+
+body.light-mode .nome-perfil {
+    color: #333333;
+}
+
+body.light-mode .perfil:hover .nome-perfil {
+    color: #000000;
+}
+
+body.light-mode .avatar-container img {
+    border-color: #000000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode .theme-toggle-btn {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .theme-toggle-btn:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+    
